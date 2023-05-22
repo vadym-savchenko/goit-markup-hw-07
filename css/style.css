@@ -68,15 +68,11 @@ img {
 .container {
   /* BASIC STYLES  */
   min-width: 320px;
+  max-width: 428px;
   padding: 16px;
-
   margin: 0 auto;
 }
-@media only screen and (min-width: 428px) {
-  .container {
-    max-width: 428px;
-  }
-}
+
 /* Tablet screen  */
 @media only screen and (min-width: 768px) {
   .container {
@@ -101,10 +97,12 @@ img {
 .page-header-container {
   display: flex;
 }
+
 .page-nav {
   display: flex;
   align-items: center;
 }
+
 /* Logotype  */
 .logotype {
   font-family: 'Raleway', sans-serif;
@@ -116,6 +114,7 @@ img {
   color: var(--blue-nomal-color);
   margin-right: 76px;
 }
+
 .accent {
   font-family: 'Raleway';
   font-weight: 800;
@@ -162,6 +161,11 @@ img {
 .site-nav {
   display: flex;
 }
+@media only screen and (max-width: 767px) {
+  .site-nav {
+    display: none;
+  }
+}
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--blue-accent-color);
@@ -178,6 +182,11 @@ img {
   display: flex;
   transition: color var(--anim-time);
 }
+@media only screen and (max-width: 767px) {
+  .contact-nav {
+    display: none;
+  }
+}
 .contact-nav .link {
   color: var(--primery-text-color);
   font-size: 16px;
@@ -191,22 +200,30 @@ img {
   margin-right: 40px;
 }
 /* /* HERO ? */
-/* .hero {
-  background-color: var(--navy-blue-bg-color);
-  text-align: center;
-  padding-top: 188px;
-  padding-bottom: 188px;
-} */
+
 .hero-title {
   color: var(--white-text-color);
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
+  max-width: 320px;
   letter-spacing: 0.02em;
-  margin-bottom: 48px;
-  max-width: 496px;
+  margin-bottom: 72px;
   margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    max-width: 496px;
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .hero-title {
+    margin-bottom: 48px;
+  }
 }
 .overlay {
   max-width: 1440px;
@@ -222,8 +239,14 @@ img {
   background-repeat: no-repeat;
   background-color: var(--navy-blue-bg-color);
   text-align: center;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  padding-top: 112px;
+  padding-bottom: 112px;
+}
+@media only screen and (min-width: 1158px) {
+  .overlay {
+    padding-top: 188px;
+    padding-bottom: 188px;
+  }
 }
 /* Section 1 */
 .section {
@@ -557,8 +580,6 @@ img {
   margin-bottom: 16px;
 }
 .subscribe-form {
-  /*  */
-  /* flex-direction: column; */
 }
 @media only screen and (min-width: 768px) {
   .subscribe-form {
@@ -953,4 +974,110 @@ img {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/* MOBILE MENU  */
+.menu-toggle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  transition: background-color var(--anim-time);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: var(--blue-accent-color);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 80px 35px 40px 40px;
+  background-color: var(--white-bg-color);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform var(--anim-time);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin-bottom: auto;
+  gap: 40px;
+}
+
+.mobile-menu .link {
+  display: block;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  color: var(--title-text-color);
+}
+.mobile-menu .active {
+  color: var(--blue-accent-color);
+}
+.mobile-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  gap: 40px;
+}
+.mobile-contacts .link {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--primery-text-color);
+}
+.mobile-contacts .contact-accent {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
+  color: var(--blue-nomal-color);
+}
+
+.mobile.social-list {
+  justify-content: flex-start;
+  gap: 56px;
+}
+.mobile.social-list-link:hover,
+.mobile.social-list-link:focus {
+  background-color: var(--green-accent-color);
 }
