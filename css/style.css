@@ -196,10 +196,10 @@ img {
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
-  .contact-nav .mail {
+  .contact-nav .mail-link {
     padding: 0 0 6px 0;
   }
-  .contact-nav .tel {
+  .contact-nav .tel-link {
     padding: 6px 0 0 0;
   }
 }
@@ -254,11 +254,6 @@ img {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/hero/people-office.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -266,6 +261,62 @@ img {
   text-align: center;
   padding-top: 112px;
   padding-bottom: 112px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero/people-office_mobile@1x.jpg);
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .overlay {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/people-office_mobile@2x.jpg);
+  }
+}
+@media only screen and (min-width: 429px) {
+  .overlay {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/people-office_tablet@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .overlay {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/people-office_tablet@2x.jpg);
+    }
+  }
+}
+@media only screen and (min-width: 769px) {
+  .overlay {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/people-office_desktop1@x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .overlay {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/people-office_desktop@2x.jpg);
+    }
+  }
 }
 @media only screen and (min-width: 1158px) {
   .overlay {
