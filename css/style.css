@@ -1165,7 +1165,7 @@ img {
   justify-content: flex-start;
   gap: 56px;
 }
-.mobile.social-list-link:hover,
-.mobile.social-list-link:focus {
+.mobile .social-list-link:hover,
+.mobile .social-list-link:focus {
   background-color: var(--green-accent-color);
 }
